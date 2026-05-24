@@ -19,8 +19,27 @@ public class Operation {
 	 * @return Uma nova {@code DLinkedList} que contém o mapeamento da coleção de dados {@code original} para a nova estrutura usada pelo sistema de notas. 
 	 */
 	public static DLinkedList map(final LinkedListOriginal original) {
-		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+		DLinkedList nova = new DLinkedList();
+
+        NodeOriginal atual = original.getHead();
+
+        while(atual != null) {
+            String id = "23.S1-" + String.format("%03d", atual.getId());
+
+            float nota;
+
+            if(atual.getInteiro() == -1 || atual.getDecimo() == -1) {
+                nota = 99.9f;
+            } else {
+                nota = Float.parseFloat(atual.getInteiro() + "." + atual.getDecimo());
+            }
+
+            nova.append(id, atual.getNome(), nota);
+
+            atual = atual.getNext();
+        }
+
+        return nova;
 	}
 
 	/**
@@ -33,8 +52,19 @@ public class Operation {
 	 * @return Uma nova {@code DLinkedList} que contém a coleção de dados ({@code data}) filtrada com nós que possuem apenas pessoas com notas válidas.
 	 */
 	public static DLinkedList filterRemoveNonGraded(final DLinkedList data) {
-		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+		DLinkedList filtrada = new DLinkedList();
+
+        Node atual = data.getHead();
+
+        while(atual != null) {
+            if(atual.getNota() != 99.9f) {
+                filtrada.append(atual.getId(), atual.getNome(), atual.getNota());
+            }
+
+            atual = atual.getRight();
+        }
+
+        return filtrada;
 	}
 
 	/**
@@ -47,8 +77,19 @@ public class Operation {
 	 * @return Uma nova {@code DLinkedList} que contém a coleção de dados ({@code data}) filtrada com nós que possuem apenas pessoas com notas inválidas.
 	 */
 	public static DLinkedList filterRemoveGraded(final DLinkedList data) {
-		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+		DLinkedList filtrada = new DLinkedList();
+
+        Node atual = data.getHead();
+
+        while(atual != null) {
+            if(atual.getNota() == 99.9f) {
+                filtrada.append(atual.getId(), atual.getNome(), atual.getNota());
+            }
+
+            atual = atual.getRight();
+        }
+
+        return filtrada;
 	}
 
 	/**
@@ -63,8 +104,19 @@ public class Operation {
 	 * @return Uma nova {@code DLinkedList} que contém a coleção de dados ({@code data}) filtrada somente com pessoas com notas maiores do que {@code average}.
 	 */
 	public static DLinkedList filterRemoveBelowAverage(final DLinkedList data, float average) {
-		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+		DLinkedList filtrada = new DLinkedList();
+
+        Node atual = data.getHead();
+
+        while(atual != null) {
+            if(atual.getNota() > average) {
+                filtrada.append(atual.getId(), atual.getNome(), atual.getNota());
+            }
+
+            atual = atual.getRight();
+        }
+
+        return filtrada;
 	}
 	
 	/**
@@ -77,8 +129,20 @@ public class Operation {
 	 * @return Média das notas ({@code float}) contidas na coleção de dados ({@code data}).
 	 */
 	public static float reduce(final DLinkedList data) {
-		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+		float soma = 0;
+        int quantidade = 0;
+
+        Node atual = data.getHead();
+
+        while(atual != null) {
+            soma += atual.getNota();
+            quantidade++;
+            atual = atual.getRight();
+        }
+
+        if(quantidade == 0) return 0;
+
+        return soma / quantidade;
 	}
 
 	/**
@@ -92,8 +156,21 @@ public class Operation {
 	 * @return {@code String} com a coleção de dados separada por ponto-e-vírgula (dados de cada pessoa) e quebras de linha (cada pessoa).
 	 */
 	public static String mapToString(final DLinkedList data) {
-		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+		 String resultado = "";
+
+        Node atual = data.getHead();
+
+        while(atual != null) {
+            resultado += atual.getId() + ";" + atual.getNome() + ";" + atual.getNota();
+
+            if(atual.getRight() != null) {
+                resultado += "\n";
+            }
+
+            atual = atual.getRight();
+        }
+
+        return resultado;
 	}
 
 }

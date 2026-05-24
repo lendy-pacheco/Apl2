@@ -17,5 +17,39 @@ package apl2;
 public class Node {
 	
 	// TODO: Implementar a classe conforme o enunciado da atividade Apl2.
-	
+	private String id;
+    private String nome;
+    private float nota;
+    private Node left;
+    private Node right;
+
+	public Node(String id, String nome, float nota) {
+        this(id, nome, nota, null, null);
+    }
+
+    public Node(String id, String nome, float nota, Node left, Node right) {
+        this.id = id;
+        this.nome = nome;
+        this.nota = nota;
+        this.left = left;
+        this.right = right;
+    }
+
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
+    public float getNota() { return nota; }
+    public void setNota(float nota) { this.nota = nota; }
+    public Node getLeft() { return left; }
+    public void setLeft(Node left) { this.left = left; }
+    public Node getRight() { return right; }
+    public void setRight(Node right) { this.right = right; }
+
+    @Override
+    public String toString() {
+        String esquerda = (left == null) ? "null" : left.getId();
+        String direita = (right == null) ? "null" : right.getId();
+        return esquerda + " <- (" + id + "; " + nome + "; " + nota + ") -> " + direita;
+    }
 }

@@ -11,6 +11,24 @@
 
 // TODO: Listar todas as referências consultadas para solucionar a atividade.
 
+/*-------------------------------------------------------------Referências-----------------------------------------------------------
+todos os materiais (PDFs) vindo das aulas presenciais
+
+video: 
+https://www.youtube.com/playlist?list=PL3ZslI15yo2r-gHJtjORRMRKMSNRpf7u5
+https://youtube.com/playlist?list=PLgCQgdu45p-xwQUjZygBS2NKDLB46cU6O&si=MQ2taCg-2Pd2FYNk
+https://www.youtube.com/watch?v=5aSJuuRPbO4
+
+forum:
+https://stackoverflow.com/questions/4716503/reading-a-plain-text-file-in-java
+https://stackoverflow.com/questions/322715/when-to-use-linkedlist-over-arraylist-in-java/322742#322742
+https://pt.stackoverflow.com/questions/579518/navegar-pelas-linhas-de-um-arquivo-txt-com-java
+https://pt.stackoverflow.com/questions/55797/listas-encadeadas-java
+https://stackoverflow.com/questions/12338868/circular-linkedlist-implementation-in-java
+https://sociedadedoinovador.com.br/estrutura-de-dados/lista-encadeada/?utm_source
+https://wagnergaspar.com/como-implementar-uma-lista-circular-lista-encadeada-circular/?utm_source
+*/
+
 import java.io.IOException;
 import apl2.DLinkedList;
 import apl2.LinkedListOriginal;

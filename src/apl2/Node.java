@@ -1,6 +1,9 @@
 // arquivo: src/apl2/Node.java
 
 // TODO: Colocar a identificação dos(as) integrantes aqui.
+//Caio Henrique Santos Carvalho | RA: 10425408
+//Kleber Gadelha Ponte Souza Filho | RA: 10321335
+//Lendy Naiara Carpio Pacheco | RA: 10428525
 
 package apl2;
 
